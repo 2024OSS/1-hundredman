@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylesheet 1</title>
     <style>
-        #top {
-            background-color: #04AA6D;
-            padding: 15px;
-            margin: 4px;
+        body {
+            font: 100% Lucida Sans, Verdana;
+            margin: 20px;
+            line-height: 26px;
         }
 
-        #menu {
+        .wrapper {
+            position: relative;
+        }
+
+        #top {
+            background-color: #04AA6D;
+            color: white;
+            padding: 15px;
+        }
+
+        #menubar {
             width: 200px;
             float: left;
         }
@@ -24,72 +34,148 @@
 
         #sidebar {
             background-color: #32a4e7;
-            padding: 10px;
-            margin: 4px;
-            width: 180px;
-            float: right;
-        }
-
-        .white {
             color: white;
+            padding: 10px;
+            width: 180px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
         }
 
-        .nospace {
-            padding: 0;
+        #bottom {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14px;
+        }
+
+        #top h1,
+        #top p,
+        #menulist {
             margin: 0;
+            padding: 0;
+        }
+
+        .menuitem {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            list-style-type: none;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        .menuitem:hover {
+            background-color: white;
+        }
+
+        .menuitem:first-child {
+            background-color: #04AA6D;
+            color: white;
+            font-weight: bold;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        #top,
+        #sidebar,
+        #bottom,
+        .menuitem {
+            border-radius: 4px;
+            margin: 4px;
+        }
+
+        @media (max-width: 800px) {
+            #sidebar {
+                position: relative;
+                width: auto;
+            }
+
+            #main {
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #menubar {
+                float: none;
+                width: auto;
+            }
+
+            #main {
+                margin-left: auto;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div id="top">
-        <h1 class="white nospace">Welcome to My Homepage</h1>
-        <p class="white nospace">Use the menu to select different Stylesheets</p>
-    </div>
+    <div>
+        <div id="top">
+            <h1>Welcome to My Homepage</h1>
+            <p>Use the menu to select different Stylesheets</p>
+        </div>
 
-    <div id="menu">
-        <ul>
-            <li>Stylesheet 1</li>
-            <li>Stylesheet 2</li>
-            <li>Stylesheet 3</li>
-            <li>Stylesheet 4</li>
-            <li>No Stylesheet</li>
-        </ul>
-    </div>
+        <div class="wrapper">
+            <div id="menubar">
+                <ul id="menulist">
+                    <li class="menuitem" onclick="location.href='style1.html'">Stylesheet 1</li>
+                    <li class="menuitem" onclick="location.href='style2.html'">Stylesheet 2</li>
+                    <li class="menuitem">Stylesheet 3</li>
+                    <li class="menuitem">Stylesheet 4</li>
+                    <li class="menuitem" onclick="location.href='nostyle.html'">No Stylesheet</li>
+                </ul>
+            </div>
 
-    <div id="main">
-        <h1>Same Page Different Stylesheets</h1>
-        <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change
-            the
-            layout of this page by selecting different stylesheets in the menu, or by selecting one of the following
-            links:
-            <a href="style1.html">Stylesheet1</a>, <a href="style2.html">Stylesheet2</a>, <a href="">Stylesheet3</a>, <a
-                href="">Stylesheet4</a>.
-        </p>
+            <div id="main">
+                <h1>Same Page Different Stylesheets</h1>
+                <p>This is a demonstration of how different stylesheets can change the layout of your HTML page. You can
+                    change
+                    the
+                    layout of this page by selecting different stylesheets in the menu, or by selecting one of the
+                    following
+                    links:
+                    <a href="style1.html">Stylesheet1</a>, <a href="style2.html">Stylesheet2</a>, <a
+                        href="">Stylesheet3</a>, <a href="">Stylesheet4</a>.
+                </p>
 
-        <h2>No Styles</h2>
-        <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page
-            looks
-            like with no stylesheet:
-            <a href="">No Stylesheet</a>.
-        </p>
-    </div>
+                <h2>No Styles</h2>
+                <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the
+                    page
+                    looks
+                    like with no stylesheet:
+                    <a href="">No Stylesheet</a>.
+                </p>
+            </div>
 
-    <div id="sidebar">
-        <h3 class="white">Side-Bar</h3>
-        <p class="white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-            dolore magna aliquam erat volutpat.</p>
-    </div>
+            <div id="sidebar">
+                <h3>Side-Bar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                    tincidunt ut laoreet
+                    dolore magna aliquam erat volutpat.</p>
+            </div>
+        </div>
 
-    <div id="bottom">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-        dolore
-        magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-        lobortis
-        nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-        molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-        qui
-        blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        <div id="bottom">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore
+            magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+            lobortis
+            nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
+            esse
+            molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
+            dignissim
+            qui
+            blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </div>
     </div>
 </body>
 
