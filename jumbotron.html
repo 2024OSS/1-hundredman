@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumbotron example</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5rem;
+        }
+
+        h1, h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        header {
+            padding: 10px;
+            display: flex;
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        header svg {
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: left;
+            padding: 10px;
+            margin-top: 20px;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .container {
+            width: 87%;
+            margin: 20px auto;
+        }
+
+        .jumbotron {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 0.3rem;
+            padding: 5rem 4rem 6rem 4rem;
+        }
+
+        .jumbotron p {
+            max-width: 750px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .col {
+            flex: 0 0 48%;
+            display: flex;
+            flex-direction: column;
+            font-size: smaller
+        }
+
+        .col > div {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem 3rem 3rem 3rem
+        }
+
+        .col button {
+            max-width: 120px;
+        }
+
+        .bg-dark {
+            background-color: #212529;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.3rem;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 0.3rem;
+            border: 0.5px solid #ced4da;
+        }
+
+        .btn-outline-light,
+        .btn-outline-secondary {
+            background-color: transparent;
+            padding: 10px;
+            border: 0.5px solid;
+            border-radius: 0.3rem;
+            cursor: pointer;
+        }
+
+        .btn-outline-light {
+            border-color: #f8f9fa;
+            color: #f8f9fa;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #f8f9fa;
+            color: black;
+        }
+
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        @media (max-width: 750px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <header>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                    class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375z" />
+                    <path
+                        d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396z" />
+                </svg>
+                <span>Jumbotron example</span>
+            </header>
+        </div>
+        <div class="jumbotron">
+            <div>
+                <h1>Custom jumbotron</h1>
+                <p>
+                    Using a series of utilities, you can create this jumbotron, just like the one in previous versions
+                    of
+                    Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.
+                </p>
+                <button class="btn-primary">Example button</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="bg-dark">
+                    <h2>Change the background</h2>
+                    <p>
+                        Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron
+                        look. Then,
+                        mix and match with additional component themes and more.
+                    </p>
+                    <button class="btn-outline-light">Example button</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="bg-light">
+                    <h2>Add borders</h2>
+                    <p>
+                        Or, keep it light and add a border for some added definition to the boundaries of your content.
+                        Be sure
+                        to look under the hood at the source HTML here as we've adjusted the alignment and sizing of
+                        both
+                        column's content for equal-height.
+                    </p>
+                    <button class="btn-outline-secondary">Example button</button>
+                </div>
+            </div>
+        </div>
+        <footer>© 2024</footer>
+</body>
+
+</html>
